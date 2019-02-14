@@ -1,0 +1,43 @@
+<div class="elgg-output elgg-text-help mbl">
+    <div>
+        Snippets use <a href="https://twig.symfony.com/" target="_blank">Twig templating language</a>.
+        In addition to core functions and filters available via Twig, you can use
+        variables and functions, specific to Elgg.
+    </div>
+
+    <div>To use a variable or function, surround it with mustache brackets, like so:</div>
+
+    <div>
+        <code>{% verbatim %}&lcub;&lcub; variable.name &rcub;&rcub;{% endverbatim %}</code>
+        <code>{% verbatim %}&lcub;&lcub; fn(arg) &rcub;&rcub;{% endverbatim %}</code>
+
+    </div>
+
+    <div>The following objects are available in all templates:</div>
+
+    <ul>
+        <li><code>app.user</code> - logged in user entity</li>
+        <li><code>app.site</code> - site entity</li>
+        <li><code>app.registrationUrl</code> - site's registration URL</li>
+        <li><code>app.loginUrl</code> - site's login URL</li>
+    </ul>
+
+    <div>Functions available in templates:</div>
+
+    <ul>
+        <li><code>echo()</code> - outputs a translated string</li>
+        <li><code>view()</code> - outputs a view</li>
+        <li><code>assetUrl()</code> - outputs a URL of a css/js file, image</li>
+        <li><code>normalizeUrl()</code> - outputs a URL of a page</li>
+    </ul>
+
+    <div>You can use Twig tags to render content conditionally:</div>
+
+    <code>
+        {% verbatim %}
+            {% if app.user %}
+                {{ app.user.name }}
+            {% endif %}
+        {% endverbatim %}
+    </code>
+</div>
