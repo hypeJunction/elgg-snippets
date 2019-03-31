@@ -50,8 +50,10 @@ class Snippets {
 		$view = "$snippet.twig";
 		$path = elgg_get_config('dataroot') . 'snippets/';
 
-		if (!is_dir($path)) {
-			mkdir($path, '0755');
+		$snippetpath = trim(pathinfo($snippet, PATHINFO_DIRNAME), ' .');
+		
+		if (!is_dir($path . $snippetpath)) {
+			mkdir($path . $snippetpath, 0755, true);
 		}
 
 		$filename = "{$path}{$view}";
